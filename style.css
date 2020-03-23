@@ -12,6 +12,7 @@
 :root {
     --color-primary:  rgb(109, 50, 218);
     --box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    --footer-btn-color:  rgb(184, 136, 230);
 }
 
 /* base styles */
@@ -40,7 +41,7 @@ img {
 
 /* LAYOUT styles */
 
-.heading {
+.heading__img {
     background-image: url(zenith-assets/images/backgrounds/hero-bg-texture.png);
     background-repeat: no-repeat;
     background-size: cover;
@@ -99,6 +100,9 @@ img {
 
 .heading__nav__ul {
     display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    margin: 1em;
 }
 
 .heading__nav__ul a {
@@ -109,6 +113,13 @@ img {
 
 .heading__nav {
     font-family: "Futura Heavy";
+}
+.heading__btn {
+    background-color: var(--color-primary);
+    border-radius: 50px;
+    width: 10em;
+    padding: 10px;
+    color: white;
 }
 
 .heading__h1 {
@@ -132,7 +143,6 @@ img {
 
 .feature__section__card {
     border: 1px solid lightgray;
-    /* width: 12em; */
     margin: 7px;
     margin-left: 1em;
     border: 1px solid rgb(227, 220, 220);
@@ -212,9 +222,9 @@ img {
 }
 
 .footer__email {
-    background-color: rgb(184, 136, 230);
+    background-color: var(--footer-btn-color);
     border-radius: 50px;
-    border: .5px solid rgb(184, 136, 230);
+    border: .5px solid var(--footer-btn-color);
     width: 60%;
     padding: 10px;
     margin: 1em;
@@ -240,4 +250,97 @@ img {
     color: white;
     padding: 10px;
     display: grid;
+}
+
+.footer__input {
+    display: flex;
+    flex-direction: column; 
+    justify-content: center;  
+    align-items: center;
+    margin: auto;
+}
+.where-select {
+    background-color: var(--footer-btn-color);
+    border: .5px solid var(--footer-btn-color);
+    color: rgb(112, 107, 107);
+}
+
+.footer__input__name, .footer__input__email, .footer__form {
+    background-color: var(--footer-btn-color);
+    border-radius: 50px;
+    border: .5px solid var(--footer-btn-color);
+    width: 60%;
+    padding: 10px;
+    margin: 1em;
+}
+
+.footer__input__btn {
+    background-color: white;
+    border-radius: 50px;
+    width: 25%;
+    padding: 10px;
+    color: var(--color-primary);
+}
+
+@media screen and (max-width: 420px) {
+    .heading__nav__ul {
+        display: none;
+    }
+    .footer__input {
+        display: none;
+    }
+}
+
+@media (min-width: 600px){
+    
+    .fa-bars {
+        color: white;
+        position: relative;
+    }
+    
+    .heading__container {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px;
+        margin-bottom: 2em;
+
+    }
+    .heading__hero {
+        background-image: url(zenith-assets/images/backgrounds/hero-bg-cards.png), url(zenith-assets/images/backgrounds/hero-bg-texture.png);
+        background-size: cover;
+        object-fit: cover;
+    }
+    .heading__h1 {
+        font-size: 3em;
+    }
+    .header__card__container {
+        margin: auto;
+        height: 200px;
+        width: 50%;
+    }
+    
+    .feature__se__dt {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+    }
+
+    .product__section {
+        display: grid;
+        grid-row-gap: 40px;
+        grid-template-rows: auto auto;
+        grid-template-areas:
+        "title title title title title"
+        "s t a j g";
+        grid-column-gap: 30px;
+        align-self: center;
+        
+    }
+
+    .footer__email, .footer__btn {
+        display: none;
+    }
+
 }
